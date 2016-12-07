@@ -14,7 +14,7 @@ app.use(express.static(__dirname + '/public'))
   var nfc_id = request.params.nfc_id || request.body.nfc_id;
 
   io.emit('nfc_readed', {borne_id: borne_id, nfc_id: nfc_id,entity_id: entity_id });
-  res.json({borne_id: borne_id, nfc_id: nfc_id,entity_id: entity_id });
+  response.json({borne_id: borne_id, nfc_id: nfc_id,entity_id: entity_id });
 });
 
 io.on('connection', function(){ 
