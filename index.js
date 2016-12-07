@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'))
   var borne  = request.params.borne || request.body.borne;
   var nfc_id = request.params.nfc_id || request.body.nfc_id;
 
-  io.emit('some event', {borne: borne, nfc_id: nfc_id });
+  io.emit('nfc_readed', {borne: borne, nfc_id: nfc_id });
 });
 
 io.on('connection', function(){ 
